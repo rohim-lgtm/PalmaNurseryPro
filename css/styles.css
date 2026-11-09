@@ -1,0 +1,203 @@
+/* ========================================================
+   SISTEM INFORMASI PEMBIBITAN - CUSTOM STYLES
+   Modern Dashboard SPA Stylesheet
+   ======================================================== */
+
+/* Custom Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glassmorphism Accents */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark-glass {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Sidebar Collapsed State Styles (Desktop) */
+#main-sidebar.collapsed {
+  width: 5rem; /* w-20 */
+}
+
+#main-sidebar.collapsed .sidebar-text,
+#main-sidebar.collapsed .dropdown-arrow,
+#main-sidebar.collapsed .sidebar-heading,
+#main-sidebar.collapsed .dropdown-content {
+  display: none !important;
+}
+
+#main-sidebar.collapsed .sidebar-open-icon {
+  display: none;
+}
+
+#main-sidebar.collapsed .sidebar-close-icon {
+  display: block;
+}
+
+#main-sidebar.collapsed a,
+#main-sidebar.collapsed button.sidebar-dropdown-btn {
+  justify-content: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+#main-sidebar.collapsed #user-profile-btn {
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+/* Dropdown Accordion Transitions */
+.dropdown-content {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+/* Carousel Slide Styles */
+.carousel-slide {
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.carousel-slide:not(.active) {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+.carousel-dot {
+  cursor: pointer;
+  outline: none;
+}
+
+.carousel-dot.active {
+  width: 1.75rem;
+  background-color: #34d399;
+}
+
+/* Timeline Pulse Animation */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+.pulse-badge {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+/* Card Hover Micro-interactions */
+.stat-card-gradient {
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(248,250,252,0.9) 100%);
+}
+
+/* Toasts */
+.toast-item {
+  animation: toast-slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Literature Article Typography */
+article.prose h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+article.prose p {
+  font-size: 0.815rem;
+  line-height: 1.65;
+  color: #334155;
+  margin-bottom: 0.75rem;
+}
+
+article.prose ul, article.prose ol {
+  font-size: 0.815rem;
+  line-height: 1.65;
+  color: #334155;
+  padding-left: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+article.prose ul {
+  list-style-type: disc;
+}
+
+article.prose ol {
+  list-style-type: decimal;
+}
+
+article.prose li {
+  margin-bottom: 0.35rem;
+}
+
+article.prose strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+article.prose em {
+  color: #047857;
+  font-style: italic;
+}
+
+/* Print Optimization */
+@media print {
+  #main-sidebar, header, #btn-edit-dashboard, footer, .no-print {
+    display: none !important;
+  }
+  body, #app, #main-content-container {
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
